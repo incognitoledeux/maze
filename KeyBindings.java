@@ -12,25 +12,25 @@ public class KeyBindings extends JFrame {
     private KeyBindings(){
         Action rightAction = new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                x +=2;
+                x +=4;
                 drawPanel.repaint();
             }
         };
         Action leftAction = new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                x -=2;
+                x -=4;
                 drawPanel.repaint();
             }
         };
         Action upAction = new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                y -=2;
+                y -=4;
                 drawPanel.repaint();
             }
         };
         Action downAction = new AbstractAction(){
             public void actionPerformed(ActionEvent e) {
-                y +=2;
+                y +=4;
                 drawPanel.repaint();
             }
         };
@@ -110,19 +110,20 @@ public class KeyBindings extends JFrame {
 
                 }
             }
-            if(gate == true){
-                g.clearRect(225, 250, 25, 25);
-            }
+
 
             Rectangle r1 = new Rectangle(x,y,25,25);
             Rectangle r2 = new Rectangle(0, 0, 25, 600);
-            Rectangle r3 = new Rectangle(225, 250, 25, 25);
+            Rectangle r3 = new Rectangle(235, 250, 25, 25);
             Rectangle r4 = new Rectangle(60, 0, 25, 250);
             Rectangle r5 = new Rectangle(0, 285, 175, 155);
             Rectangle r6 = new Rectangle(0, 465, 175, 200);
             Rectangle r7 = new Rectangle(0, 565, 250, 200);
             Rectangle r8 = new Rectangle(65, 0, 175, 240);
-            Rectangle r9 = new Rectangle(205, 260, 45, 380);
+            if(gate == true){
+                g.clearRect(225, 250, 25, 25);
+                r3.setLocation(0,0);
+            }
             if(r1.intersects(r2)) {
                 x=25;
                 y=25;
@@ -153,11 +154,6 @@ public class KeyBindings extends JFrame {
                 y=25;
             }
             if(r1.intersects(r8))
-            {
-                x=25;
-                y=25;
-            }
-            if(r1.intersects(r9))
             {
                 x=25;
                 y=25;
